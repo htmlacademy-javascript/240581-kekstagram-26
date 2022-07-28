@@ -24,20 +24,20 @@ function onBigPictureEscKeydown(evt) {
   closeByEscKeydown(closeBigPicture, evt);
 }
 
+// Функция показа окна полноразмерного изображения и добавление обработчика для закрытия по нажатию на 'Escape'
+function openBigPicture() {
+  bigPicture.classList.remove('hidden');
+  body.classList.add('modal-open');
+
+  document.addEventListener('keydown', onBigPictureEscKeydown);
+}
+
 // Функция скрытия окна полноразмерного изображения и удаление обработчика для закрытия по нажатию на 'Escape'
 function closeBigPicture() {
   bigPicture.classList.add('hidden');
   body.classList.remove('modal-open');
 
   document.removeEventListener('keydown', onBigPictureEscKeydown);
-}
-
-// Функция показа окна полноразмерного изображения и добавление обработчика для закрытия
-function openBigPicture() {
-  bigPicture.classList.remove('hidden');
-  body.classList.add('modal-open');
-
-  document.addEventListener('keydown', onBigPictureEscKeydown);
 }
 
 // Закрытие окна полноразмерного изображения по клику иконки закрытия
